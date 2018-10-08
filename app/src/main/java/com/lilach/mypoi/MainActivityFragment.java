@@ -280,7 +280,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
             switch (v.getId()) {
 
                 case R.id.button_search_by_text:
-                    url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + params + "&key=AIzaSyBiMBQfs2ZMMl5Lch-mU-RkoIquLQ-X0aU";
+                    url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + params + "&key=API_KEY";
                     //url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+params+"&inputtype=textquery&fields=place_id,photos,formatted_address,name,geometry&key=AIzaSyBiMBQfs2ZMMl5Lch-mU-RkoIquLQ-X0aU";
                     new MyAsyncTask(context, this).execute(url);
                     break;
@@ -288,7 +288,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                 case R.id.button_search_by_position:
 
                     if(myLocation != null) {
-                        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + myLocation.getLatitude() + "," + myLocation.getLongitude() + "&radius=10000&keyword=" + params + "&key=AIzaSyBiMBQfs2ZMMl5Lch-mU-RkoIquLQ-X0aU";
+                        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + myLocation.getLatitude() + "," + myLocation.getLongitude() + "&radius=10000&keyword=" + params + "&key=API_KEY";
                         new MyAsyncTask(context, this).execute(url);
                     }else{
                         if(isPermitted){
@@ -296,7 +296,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                             if(myLocation == null){
                                 buildAlertDialog(getResources().getString(R.string.no_gps));
                             }else{
-                                url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + myLocation.getLatitude() + "," + myLocation.getLongitude() + "&radius=10000&keyword=" + params + "&key=AIzaSyBiMBQfs2ZMMl5Lch-mU-RkoIquLQ-X0aU";
+                                url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + myLocation.getLatitude() + "," + myLocation.getLongitude() + "&radius=10000&keyword=" + params + "&key=API_KEY";
                                 new MyAsyncTask(context, this).execute(url);
                             }
 
